@@ -1,0 +1,30 @@
+[
+  { "name": "base only", "base_price_cents": 1800000, "travelers": 4, "selections": [] },
+  { "name": "single traveler", "base_price_cents": 1800000, "travelers": 1, "selections": [] },
+  { "name": "per-person partial uptake", "base_price_cents": 1800000, "travelers": 4,
+    "selections": [{ "key": "guide", "unit": "per_person", "unit_price_cents": 150000, "qty": 2 }] },
+  { "name": "mixed units", "base_price_cents": 1800000, "travelers": 4,
+    "selections": [
+      { "key": "guide", "unit": "per_person", "unit_price_cents": 150000, "qty": 2 },
+      { "key": "trek", "unit": "per_person", "unit_price_cents": 120000, "qty": 4 },
+      { "key": "taxi", "unit": "per_vehicle", "unit_price_cents": 190000, "qty": 1 },
+      { "key": "room", "unit": "per_night", "unit_price_cents": 240000, "qty": 6 }
+    ] },
+  { "name": "zero qty dropped", "base_price_cents": 1800000, "travelers": 3,
+    "selections": [
+      { "key": "guide", "unit": "per_person", "unit_price_cents": 150000, "qty": 0 },
+      { "key": "taxi", "unit": "per_vehicle", "unit_price_cents": 190000, "qty": 2 }
+    ] },
+  { "name": "odd division for per-traveler", "base_price_cents": 1333333, "travelers": 3,
+    "selections": [{ "key": "x", "unit": "per_group", "unit_price_cents": 77777, "qty": 1 }] },
+  { "name": "fee rounds half up", "base_price_cents": 10, "travelers": 1, "selections": [] },
+  { "name": "fee on odd subtotal", "base_price_cents": 999999, "travelers": 7,
+    "selections": [{ "key": "y", "unit": "per_person", "unit_price_cents": 33333, "qty": 5 }] },
+  { "name": "large group", "base_price_cents": 2500000, "travelers": 12,
+    "selections": [
+      { "key": "guide", "unit": "per_person", "unit_price_cents": 260000, "qty": 12 },
+      { "key": "bus", "unit": "per_vehicle", "unit_price_cents": 890000, "qty": 2 }
+    ] },
+  { "name": "free add-on", "base_price_cents": 500000, "travelers": 2,
+    "selections": [{ "key": "welcome", "unit": "per_group", "unit_price_cents": 0, "qty": 1 }] }
+]

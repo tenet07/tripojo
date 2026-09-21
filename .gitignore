@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+backend/storage/*.sqlite3
+backend/log/
+backend/tmp/

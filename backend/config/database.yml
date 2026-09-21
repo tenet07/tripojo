@@ -1,0 +1,17 @@
+default: &default
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  adapter: sqlite3
+  timeout: 5000
+  database: storage/development.sqlite3
+
+test:
+  adapter: sqlite3
+  timeout: 5000
+  database: storage/test.sqlite3
+
+# Render sets DATABASE_URL for you; it points at Neon in production.
+production:
+  <<: *default
+  url: <%= ENV.fetch("DATABASE_URL") %>

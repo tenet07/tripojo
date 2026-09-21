@@ -1,0 +1,26 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+#
+# Deploys the Rails API only. Database is external (Neon), so it is not
+# declared here — set DATABASE_URL manually after creating the Neon project.
+services:
+  - type: web
+    name: tripojo-api
+    runtime: ruby
+    plan: free
+    region: singapore
+    rootDir: backend
+    buildCommand: "bundle install"
+    startCommand: "bundle exec rails db:prepare && bundle exec rails s -p $PORT -e $RAILS_ENV"
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_LOG_TO_STDOUT
+        value: "true"
+      - key: SECRET_KEY_BASE
+        generateValue: true
+      - key: TRIPOJO_JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: FRONTEND_ORIGINS
+        sync: false

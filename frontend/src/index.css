@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-surface text-ink-900;
+    font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Klook's signature section heading: a short orange bar, then the text. */
+  .section-head {
+    @apply flex items-center gap-2.5 text-lg font-bold text-ink-900;
+  }
+  .section-head::before {
+    content: "";
+    @apply block h-[17px] w-1 shrink-0 rounded-sm bg-brand-500;
+  }
+
+  .photo {
+    @apply relative overflow-hidden bg-ink-200;
+  }
+  .photo::after {
+    content: "";
+    @apply absolute inset-0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0) 52%);
+  }
+}
+
+/* Stand-in photography until real image uploads are wired up. Duotone
+   gradients read as imagery at this fidelity, where a grey box reads as
+   unfinished.
+
+   Deliberately outside @layer: the class name is built at runtime
+   (`photo-${kind}`), so Tailwind can't see it in the source and would purge
+   these from a layer. Plain CSS is never purged. */
+.photo-jungle {
+  background: linear-gradient(155deg, #a9dfa2 0%, #3c8c58 52%, #1b4630 100%);
+}
+.photo-mountain {
+  background: linear-gradient(155deg, #b4d2ed 0%, #5c7da6 50%, #27364f 100%);
+}
+.photo-surf {
+  background: linear-gradient(155deg, #ffdd93 0%, #ff8a5b 46%, #2b7fa8 100%);
+}
+.photo-beach {
+  background: linear-gradient(155deg, #8fe0ec 0%, #37a6c9 48%, #f2d3a4 100%);
+}
+.photo-temple {
+  background: linear-gradient(155deg, #f8cb98 0%, #e0793f 52%, #8e432b 100%);
+}
+.photo-water {
+  background: linear-gradient(155deg, #c6eef3 0%, #54b8c9 50%, #256f8a 100%);
+}
+.photo-city {
+  background: linear-gradient(155deg, #ffc095 0%, #e8608a 48%, #5f3897 100%);
+}
+.photo-night {
+  background: linear-gradient(155deg, #8e7be8 0%, #4a3e9e 48%, #171540 100%);
+}
+.photo-grey {
+  background: linear-gradient(155deg, #dcdce2 0%, #b4b4be 100%);
+}
