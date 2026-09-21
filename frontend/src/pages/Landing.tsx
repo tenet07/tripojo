@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { NavBar } from "../design-system/NavBar";
 import { Card } from "../design-system/Card";
 import { Badge } from "../design-system/Badge";
 import { Button } from "../design-system/Button";
@@ -7,8 +6,6 @@ import { Button } from "../design-system/Button";
 export default function Landing() {
   return (
     <div className="min-h-screen bg-bg">
-      <NavBar />
-
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-16 sm:pt-24">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>

@@ -1,6 +1,5 @@
 import { FormEvent, useState } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
-import { NavBar } from "../../design-system/NavBar";
 import { Card } from "../../design-system/Card";
 import { Input, Select } from "../../design-system/FormFields";
 import { Button } from "../../design-system/Button";
@@ -40,7 +39,6 @@ export default function Signup() {
 
   return (
     <div className="min-h-screen bg-bg">
-      <NavBar />
       <div className="mx-auto flex max-w-md flex-col justify-center px-6 py-16">
         <h1 className="font-display text-2xl font-bold text-ink-900">Create your Tripojo account</h1>
         <p className="mt-1 text-sm text-ink-500">Takes about a minute. You can flesh out details next.</p>

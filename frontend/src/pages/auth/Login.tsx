@@ -1,6 +1,5 @@
 import { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { NavBar } from "../../design-system/NavBar";
 import { Card } from "../../design-system/Card";
 import { Input } from "../../design-system/FormFields";
 import { Button } from "../../design-system/Button";
@@ -35,7 +34,6 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-bg">
-      <NavBar />
       <div className="mx-auto flex max-w-md flex-col justify-center px-6 py-16">
         <h1 className="font-display text-2xl font-bold text-ink-900">Welcome back</h1>
         <Card className="mt-6">

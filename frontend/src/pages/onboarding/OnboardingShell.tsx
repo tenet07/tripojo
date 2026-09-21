@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { NavBar } from "../../design-system/NavBar";
 import { Stepper } from "../../design-system/Stepper";
 import { Card } from "../../design-system/Card";
 
@@ -25,7 +24,6 @@ export function OnboardingShell({
 }) {
   return (
     <div className="min-h-screen bg-bg">
-      <NavBar />
       <div className="mx-auto max-w-2xl px-6 py-12">
         <p className="text-sm font-semibold uppercase tracking-wide text-primary-500">{eyebrow}</p>
         <h1 className="mt-1 font-display text-2xl font-bold text-ink-900 sm:text-3xl">{title}</h1>
